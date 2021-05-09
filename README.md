@@ -103,12 +103,20 @@ Linux/Unix-like:
 
 [source] 1>&1 [destination]
 
-
-
-
 ```
 
+# Node Input and Output
 
+console.log() --> stdout
+
+console.error() --> stderr
+
+throw new Error() --> stderr
+
+> node node-example1.js > example1-out 2> example1-err
+
+
+## Redirect Nodemon Output
 
 nodemon({
   script: index.js,
