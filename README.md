@@ -107,14 +107,16 @@ Linux/Unix-like:
 
 # Node Input and Output
 
-console.log() --> stdout
+``` js
+console.log() // --> stdout
 
-console.error() --> stderr
+console.error() // --> stderr
 
-throw new Error() --> stderr
-
-> node node-example1.js > example1-out 2> example1-err
-
+throw new Error() // --> stderr
+```
+``` shell
+node node-example1.js > example1-out 2> example1-err
+```
 
 ## Redirect Nodemon Output
 
