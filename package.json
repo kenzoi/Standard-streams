@@ -1,0 +1,22 @@
+{
+  "name": "standard-streams",
+  "version": "1.0.0",
+  "description": "Standard streams are interconnected input and output communication channels[1] between a computer program and its environment when it begins execution.",
+  "main": "example1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenzoi/Standard-streams.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenzoi/Standard-streams/issues"
+  },
+  "homepage": "https://github.com/kenzoi/Standard-streams#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

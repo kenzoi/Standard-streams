@@ -103,9 +103,13 @@ Linux/Unix-like:
 
 [source] 1>&1 [destination]
 
+# Redirect both stdout and stderr to a file and print to the terminal
+[source] 2>&1 | tee ./file
+
 ```
 
 # Node Input and Output
+
 
 ``` js
 console.log() // --> stdout
@@ -114,12 +118,37 @@ console.error() // --> stderr
 
 throw new Error() // --> stderr
 ```
+
+## Example1:
+
+Run the file as below.
+
 ``` shell
-node node-example1.js > example1-out 2> example1-err
+node example1.js > stdout.log 2> stderr.log
 ```
 
-## Redirect Nodemon Output
+## Example2:
 
+``` shell
+cd example2
+node example2.js > stdout.log 2> stderr.log
+
+curl localhost:3001/req # --> Print the req object to stdout
+
+curl localhost:3001/res # --> Print the res object to stdout
+
+curl localhost:3001/error # --> Print a console.error() to stderr
+```
+
+# Redirect Nodemon Output
+
+Nodemon prints the output with colors by default, redirecting the output directly from shell catch a lot of color tags. Instead follow the next steps:
+
+1. Create a new javascript file, file.js
+2. Import nodemon and fs
+3. Append the code below:
+
+``` js
 nodemon({
   script: index.js,
   stdout: false // important: this tells nodemon not to output to console
@@ -127,11 +156,8 @@ nodemon({
   this.stdout.pipe(fs.createWriteStream('output.txt'));
   this.stderr.pipe(fs.createWriteStream('err.txt'));
 });
+```
 
-
-Redirect the output 
-
-ls 2>&1 | tee ./ls.txt
 
 
 
